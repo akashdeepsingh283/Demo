@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calc.css" />
+  </head>
+  <body>
+    <main class="calculator">
+      <div class="displaybox">
+        <input
+          type="text"
+          id="topbut"
+          style="color: #1f6f78; font-size: 28px; background-color: #93e4c1"
+          readonly
+        />
+      </div>
+      <div class="buttons">
+        <button
+          onclick="currentDisplay='';
+                  document.querySelector('#topbut').value=currentDisplay;"
+        >
+          <input
+            type="button"
+            value="C"
+            style="border: none; background-color: #118a7e; color: white"
+          />
+        </button>
+        <button
+          onclick="currentDisplay=currentDisplay+'1';
+                  document.querySelector('#topbut').value=currentDisplay;"
+        >
+          <input
+            type="button"
+            value="1"
+            style="border: none; background-color: #118a7e; color: white"
+          />
+        </button>
+        <button
+          onclick="currentDisplay=currentDisplay+'2';
+                  document.querySelector('#topbut').value=currentDisplay;"
+        >
+          <input
+            type="button"
+            value="2"
+            style="border: none; background-color: #118a7e; color: white"
+          />
+        </button>
+        <button
+          onclick="currentDisplay=currentDisplay+'+';
+                  document.querySelector('#topbut').value=currentDisplay;"
+        >
+          <input
+            type="button"
+            value="+"
+            style="border: none; background-color: #118a7e; color: white"
+          />
+        </button>
+        <button
+          onclick="currentDisplay=currentDisplay+'3';
+                  document.querySelector('#topbut').value=currentDisplay;"
+        >
+          <input
+            type="button"
+            value="3"
+            style="border: none; background-color: #118a7e; color: white"
+          />
+        </button>
+        <button
+          onclick="currentDisplay=currentDisplay+'4';
+                  document.querySelector('#topbut').value=currentDisplay;"
+        >
+          <input
+            type="button"
+            value="4"
+            style="border: none; background-color: #118a7e; color: white"
+          />
+        </button>
+        <button
+          onclick="currentDisplay=currentDisplay+'-';
+                  document.querySelector('#topbut').value=currentDisplay;"
+        >
+          <input
+            type="button"
+            value="-"
+            style="border: none; background-color: #118a7e; color: white"
+          />
+        </button>
+        <button
+          onclick="currentDisplay=currentDisplay+'5';
+                  document.querySelector('#topbut').value=currentDisplay;"
+        >
+          <input
+            type="button"
+            value="5"
+            style="border: none; background-color: #118a7e; color: white"
+          />
+        </button>
+        <button
+          onclick="currentDisplay=currentDisplay+'6';
+                  document.querySelector('#topbut').value=currentDisplay;"
+        >
+          <input
+            type="button"
+            value="6"
+            style="border: none; background-color: #118a7e; color: white"
+          />
+        </button>
+        <button
+          onclick="currentDisplay=currentDisplay+'*';
+                  document.querySelector('#topbut').value=currentDisplay;"
+        >
+          <input
+            type="button"
+            value="*"
+            style="border: none; background-color: #118a7e; color: white"
+          />
+        </button>
+        <button
+          onclick="currentDisplay=currentDisplay+'7';
+                  document.querySelector('#topbut').value=currentDisplay;"
+        >
+          <input
+            type="button"
+            value="7"
+            style="border: none; background-color: #118a7e; color: white"
+          />
+        </button>
+        <button
+          onclick="currentDisplay=currentDisplay+'8';
+                  document.querySelector('#topbut').value=currentDisplay;"
+        >
+          <input
+            type="button"
+            value="8"
+            style="border: none; background-color: #118a7e; color: white"
+          />
+        </button>
+        <button
+          onclick="currentDisplay=currentDisplay+'/';
+                  document.querySelector('#topbut').value=currentDisplay;"
+        >
+          <input
+            type="button"
+            value="/"
+            style="border: none; background-color: #118a7e; color: white"
+          />
+        </button>
+        <button style="background-color: #1f6f78">
+          <input
+            type="button"
+            value="="
+            style="border: none; background-color: #1f6f78; color: white"
+            onclick="
+                        let result=eval(currentDisplay);
+                        currentDisplay=result;
+                        document.querySelector('#topbut').value=currentDisplay;"
+          />
+        </button>
+        <button
+          onclick="currentDisplay=currentDisplay+'9';
+                  document.querySelector('#topbut').value=currentDisplay;"
+        >
+          <input
+            type="button"
+            value="9"
+            style="border: none; background-color: #118a7e; color: white"
+          />
+        </button>
+        <div class="botbut">
+          <button
+            onclick="currentDisplay=currentDisplay+'0';
+                  document.querySelector('#topbut').value=currentDisplay;"
+          >
+            <input
+              type="button"
+              value="0"
+              style="border: none; background-color: #118a7e; color: white"
+            />
+          </button>
+          <button
+            onclick="currentDisplay=currentDisplay+'.';
+                  document.querySelector('#topbut').value=currentDisplay;"
+          >
+            <input
+              type="button"
+              value="."
+              style="border: none; background-color: #118a7e; color: white"
+            />
+          </button>
+        </div>
+      </div>
+    </main>
+    <script src="calc.js"></script>
+  </body>
+</html>
