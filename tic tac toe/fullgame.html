@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>second-page</title>
+</head>
+<style>
+      @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Ubuntu:wght@700&display=swap');
+*{
+      margin: 0;
+      padding: 0;
+}
+body{
+      background-color: #fdca01;
+      
+.buttons{
+      height: 534px;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      margin-top: 140px;
+      grid-template-columns: 249px 249px 465px;
+}
+.box{
+      background-color: transparent;
+      border: 3px solid #624f2a;
+      cursor: pointer;
+      height: 200px;
+      width: 250px;
+      top: 50%; 
+      right: 50%;
+      transform: translate(50%,-50%);
+      text-transform: uppercase;
+      font-family: verdana;
+      font-size: 150px;
+      font-weight: 700;
+      color: #d9b36e;
+      text-shadow: 1px 1px 1px #a6792b,
+          1px 2px 1px #a6792b,
+          1px 3px 1px #a6792b,
+          1px 4px 1px #a6792b,
+          1px 5px 1px #a6792b,
+          1px 6px 1px #a6792b,
+          1px 7px 1px #a6792b,
+          1px 8px 1px #a6792b,
+          1px 9px 1px #a6792b,
+          1px 10px 1px #a6792b,
+      1px 18px 6px rgba(16,16,16,0.4),
+      1px 22px 10px rgba(16,16,16,0.2),
+      1px 25px 35px rgba(16,16,16,0.2),
+      1px 30px 60px rgba(16,16,16,0.4);
+}
+.reset {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 20px;
+      cursor: pointer;
+      gap:  20px;
+}
+.reset button{
+      height: 50px;
+      border-radius: 25px;
+      width: 300px;
+      cursor: pointer;
+      background-color: transparent;
+      color: rgb(255, 255, 255);
+      font-size: 20px;
+      font-family: 'Press Start 2P', system-ui;
+      
+}
+.reset button{
+      background-color: #624f2a;
+}
+.reset button:hover{
+      background-color: #3e2e0f;
+}
+
+</style>
+<body>
+      <div class="playerlist">
+            <div class="pl1">aman</div>
+            <div class="pl2">akash</div>
+      </div>
+      <div class="buttons">
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+      </div>
+      <div class="reset" style="cursor: pointer;">
+            <button>Reset</button>
+            <button id="newplayers">NEW PLAYERS</button>
+      </div>
+      <script>
+            const pl1=localStorage.getItem("player1");
+          const pl2=localStorage.getItem("player2");
+          document.querySelector(".pl1").innerHTML=pl1;
+            let boxes=document.querySelectorAll(".box");
+let reset=document.querySelector(".reset");
+let newPlayer=document.querySelector("#newplayers");
+
+let turn0=true;
+let winpattern=[
+  [0, 1, 2],
+  [0, 3, 6],
+  [0, 4, 8],
+  [1, 4, 7],
+  [2, 5, 8],
+  [2, 4, 6],
+  [3, 4, 5],
+  [6, 7, 8],
+];
+     boxes.forEach((box) => {
+      box.addEventListener("click",()=>{
+            console.log("click");
+            if (turn0) {
+                  box.innerText="O";
+                  turn0=false;
+            }
+            else{
+                  box.innerText="X";
+                  turn0=true;
+            }
+            box.disabled=true;
+            checkWinner();
+      })})
+      const checkWinner = () => {
+            for (let pattern of winpattern) {
+              let pos1Val = boxes[pattern[0]].innerText;
+              let pos2Val = boxes[pattern[1]].innerText;
+              let pos3Val = boxes[pattern[2]].innerText;
+
+          
+              if (pos1Val != "" && pos2Val != "" && pos3Val != "") {
+                if (pos1Val === pos2Val && pos2Val === pos3Val) {
+                   console.log("winner is",pos1Val);
+                  let boss=pos1Val;
+                    setTimeout(function(){
+                      alert(`winner is ${boss}`);
+                      for(box of boxes){
+                        console.log(box.innerText);
+                        box.innerText='';box.disabled=false;
+                  }
+                  turn0=true;
+                },200);
+                  return true;
+                }
+                else if (pos1Val != pos2Val && pos2Val != pos3Val) {
+                  let isBoardFull = true;
+                  for (let box of boxes) {
+                    if (box.innerText === "") {
+                      isBoardFull = false;
+                      break;
+                    }
+                  }
+                  if (isBoardFull) {
+                    setTimeout(function() {
+                      alert(`Winner is no one`);
+                      for(box of boxes){
+                        console.log(box.innerText);
+                        box.innerText='';box.disabled=false;
+                  }
+                  turn0=true;
+
+                    }, 200);
+                    return false;
+                  }
+                }
+              }
+            
+            }
+          };
+          reset.addEventListener("click",()=>{
+            
+            for(box of boxes){
+                  console.log(box.innerText);
+                  box.innerText='';box.disabled=false;
+            }
+            turn0=true;
+  
+            
+          })
+          newPlayer.addEventListener("click",()=>{
+            window.location.href="firstpage.html";
+          })
+          
+
+      </script>
+</body>
+</html>

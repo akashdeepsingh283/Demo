@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Press+Start+2P&family=Ubuntu:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Ubuntu:wght@700&display=swap');
+*{
+      margin: 0;
+      padding: 0;
+}
+body{
+      background-color: #fdca01;
+      
+.buttons{
+      height: 534px;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      margin-top: -50px;
+      grid-template-columns: 249px 249px 465px;
+}
+.box{
+      background-color: transparent;
+      border: 3px solid #624f2a;
+      cursor: pointer;
+      height: 200px;
+      width: 250px;
+      top: 50%; 
+      right: 50%;
+      transform: translate(50%,-50%);
+      text-transform: uppercase;
+      font-family: verdana;
+      font-size: 150px;
+      font-weight: 700;
+      color: #d9b36e;
+      text-shadow: 1px 1px 1px #a6792b,
+          1px 2px 1px #a6792b,
+          1px 3px 1px #a6792b,
+          1px 4px 1px #a6792b,
+          1px 5px 1px #a6792b,
+          1px 6px 1px #a6792b,
+          1px 7px 1px #a6792b,
+          1px 8px 1px #a6792b,
+          1px 9px 1px #a6792b,
+          1px 10px 1px #a6792b,
+      1px 18px 6px rgba(16,16,16,0.4),
+      1px 22px 10px rgba(16,16,16,0.2),
+      1px 25px 35px rgba(16,16,16,0.2),
+      1px 30px 60px rgba(16,16,16,0.4);
+}
+.reset {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 20px;
+      cursor: pointer;
+      gap:  20px;
+}
+.reset button{
+      height: 50px;
+      border-radius: 25px;
+      width: 300px;
+      cursor: pointer;
+      background-color: transparent;
+      color: rgb(255, 255, 255);
+      font-size: 20px;
+      font-family: 'Press Start 2P', system-ui;
+      
+}
+.reset button{
+      background-color: #624f2a;
+}
+.reset button:hover{
+      background-color: #3e2e0f;
+}
+#namecard{
+      margin-left: 20px;
+      font-family: 'Bangers', system-ui;
+      font-size: 50px;
+      color: hsl(40, 40%, 27%);
+      width: 12%;
+      height: 100px;
+      margin-top: 50px;
+      font-size: 50px;
+      padding-top: 50px;
+}
+h1{
+      font-family: 'Press Start 2P', system-ui;
+      font-size: 80px;
+      color: #ffffff;
+      text-align: center;
+      margin-top: 30px;
+
+}
+#winner{
+      margin-left: 1248px;
+      font-family: 'Bangers', system-ui;
+      font-size: 50px;
+      color: hsl(0, 0%, 0%);
+      width: 12%;
+      height: 100px;
+      margin-top: -150px;
+      font-size: 50px;
+      padding-top: 50px;
+      top: 100px;
+}

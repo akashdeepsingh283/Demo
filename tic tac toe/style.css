@@ -1,0 +1,48 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins:wght@300&family=Turret+Road&display=swap');
+*{
+      margin: 0;
+      padding: 0;
+}
+body{
+      background-image: url(https://cdn.pixabay.com/photo/2017/01/05/09/21/tic-tac-toe-1954446_1280.jpg);
+      background-size: cover;
+}
+.start{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+}
+#namecard{
+      box-shadow: 15px -10px 10px black;
+      background:linear-gradient(196deg,#00000000,#ffffff2b);
+      border-radius: 25px;
+      border: 0px solid rgb(255, 255, 255);
+      height: 400px;
+      width: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 25vh;
+      gap: 25px;
+}
+#namecard input{
+      border-radius: 25px;
+      width: 17vw;
+      font-size: 25px;
+      height:50px ;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+}
+.playbut{
+      width: 150px;
+      height: 30px;
+      border-radius: 50px;
+      cursor: pointer;
+}
+.game{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
